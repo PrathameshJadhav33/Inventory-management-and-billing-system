@@ -71,7 +71,7 @@ void emp()
             switch (choice)
             {
             case 1:
-                cout << "case 1";
+                billing();
                 break;
             case 2:
                 cout << "case 2";
