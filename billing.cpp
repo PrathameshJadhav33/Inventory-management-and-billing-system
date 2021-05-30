@@ -17,7 +17,7 @@ void billing()
     {
         system("cls");
         bil_header();
-        cout << "\n\t\t\t\t1. Generate new";
+        cout << "\n\n\t\t\t\t1. Generate new";
         cout << "\n\t\t\t\t2. View Bills";
         cout << "\n\t\t\t\t3. Return to employee page";
         cout << "\n\t\t\t\t4. Exit";

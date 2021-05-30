@@ -1,7 +1,8 @@
 #include <iostream>
 #include <unistd.h>
-#include <sqlite3.h>
+
 #include "inventory.hpp"
+#include "report.hpp"
 using namespace std;
 #define password "ok"
 #define username "admin"
@@ -72,11 +73,10 @@ void admin()
             switch (choice)
             {
             case 1:
-                cout << "case 1";
                 inventory();
                 break;
             case 2:
-                cout << "case 2";
+                report();
                 break;
             case 3:
                 break;

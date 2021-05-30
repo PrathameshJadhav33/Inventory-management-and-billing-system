@@ -6,7 +6,7 @@ void report_header()
 {
     cout << "\n\t\t\t---------------------------------------------------------";
     cout << "\n\t\t\t|\t\t\t\t\t\t\t|";
-    cout << "\n\t\t\t|\t\t\tReport\t\t\t|";
+    cout << "\n\t\t\t|\t\t\t\tReport\t\t\t|";
     cout << "\n\t\t\t|\t\t\t\t\t\t\t|";
     cout << "\n\t\t\t---------------------------------------------------------";
 }
@@ -17,7 +17,7 @@ void report()
     {
         system("cls");
         report_header();
-        cout << "\n\t\t\t\t1. Stock Sales Chart";
+        cout << "\n\n\t\t\t\t1. Stock Sales Chart";
         cout << "\n\t\t\t\t2. Today's sales";
         cout << "\n\t\t\t\t3. Customers Favourite";
         cout << "\n\t\t\t\t4. Return to employee page";

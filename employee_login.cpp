@@ -1,6 +1,7 @@
 #include <iostream>
 #include <unistd.h>
 #include "billing.hpp"
+#include "report.hpp"
 using namespace std;
 #define password "ok"
 #define username "emp1"
@@ -74,7 +75,7 @@ void emp()
                 billing();
                 break;
             case 2:
-                cout << "case 2";
+                report();
                 break;
             case 3:
                 break;

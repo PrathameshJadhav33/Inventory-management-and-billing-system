@@ -54,5 +54,5 @@ void inventory()
         default:
             cout << "wrong choice!!";
         }
-    } while (choice != 8);
+    } while (choice != 7);
 }
