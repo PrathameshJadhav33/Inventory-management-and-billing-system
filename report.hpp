@@ -5,7 +5,6 @@
 // Declarations
 
 // Notice that this does not define a global variable, it just says to the compiler "in some module there's a global named in this way, let me access it"
-extern int AUselessGlobalVar;
-int AddFive(int In);
+void report();
 
 #endif
