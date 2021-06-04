@@ -16,7 +16,7 @@ public:
     void open_db()
     {
         //open database or create if does not exist
-        rc = sqlite3_open("inventory.db", &db1);
+        rc = sqlite3_open("/D:/KIT/Semester 4/mini project/inventory.db", &db1);
 
         //check for errors in creation or opening
         if (rc)
@@ -55,8 +55,8 @@ public:
     void insert()
     {
         //sql insert query
-        sql = "INSERT INTO STOCK (QR,NAME,CATEGORY,PRICE,QTY,GST)"
-              "VALUES (235,'cheese','FMCG',50.00,10,2.3);";
+        sql = "INSERT INTO STOCK (ID,NAME,CATEGORY,PRICE,QTY)"
+              "VALUES (235,'cheese','FMCG',50.00,10);";
         rc = sqlite3_exec(db1, sql, callback, (void *)data, &zErrMsg);
         if (rc != SQLITE_OK)
         {
@@ -113,7 +113,6 @@ void db_test()
     int choice;
     database obj;
     obj.open_db();
-    obj.create();
     obj.insert();
     obj.select();
     cin >>choice;
