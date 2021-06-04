@@ -1,5 +1,6 @@
 #include <iostream>
 #include <unistd.h>
+#include <stdlib.h>
 #include "admin_login.hpp"
 #include "employee_login.hpp"
 using namespace std;

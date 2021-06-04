@@ -1,5 +1,8 @@
 #include <iostream>
 #include <unistd.h>
+#include <stdlib.h>
+#include<windows.h>
+
 #include "billing.hpp"
 #include "report.hpp"
 using namespace std;
@@ -49,7 +52,7 @@ bool emp_login(bool flag)
         {
             cout << "\n\t\t\t\t\033[1;31m Authentication Failed\033[0m";
         }
-        sleep(1);
+        Sleep(1000);
     } while (flag == false && tries < 3);
     return flag;
 }

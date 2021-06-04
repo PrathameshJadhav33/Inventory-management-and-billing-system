@@ -1,5 +1,7 @@
 #include <iostream>
 #include <unistd.h>
+#include <stdlib.h>
+#include<windows.h>
 
 #include "inventory.hpp"
 #include "report.hpp"
@@ -50,7 +52,7 @@ bool admin_login(bool flag)
         {
             cout << "\n\t\t\t\t\033[1;31m Authentication Failed\033[0m";
         }
-        sleep(1);
+        Sleep(1000);
     } while (flag == false && tries < 3);
     return flag;
 }

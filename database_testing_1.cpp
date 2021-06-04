@@ -16,12 +16,12 @@ public:
     void open_db()
     {
         //open database or create if does not exist
-        rc = sqlite3_open("stock_1.db", &db1);
+        rc = sqlite3_open("inventory.db", &db1);
 
         //check for errors in creation or opening
         if (rc)
         {
-            cout << "\n\tcant open database";
+            cout << "\n\tUnable to open database";
             cout << "\n\tError:" << sqlite3_errmsg(db1);
         }
         else
@@ -33,12 +33,11 @@ public:
     {
         //sql query to create
         sql = "CREATE TABLE STOCK("
-              "QR     INT PRIMARY KEY NOT NULL,"
+              "ID     INT PRIMARY KEY NOT NULL,"
               "NAME   TEXT            NOT NULL,"
               "CATEGORY TEXT          NOT NULL,"
               "PRICE  REAL            NOT NULL,"
-              "QTY    INT             NOT NULL,"
-              "GST    REAL            NOT NULL);";
+              "QTY    INT             NOT NULL);";
 
         //executes sql query to create STOCK table
         rc = sqlite3_exec(db1, sql, callback, 0, &zErrMsg);

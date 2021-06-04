@@ -1,5 +1,8 @@
 #include "inventory.hpp"
 #include <iostream>
+#include <stdlib.h>
+#include <unistd.h>
+
 using namespace std;
 
 void inv_display()
