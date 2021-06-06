@@ -27,7 +27,7 @@ private:
 
     stringstream ss;
 
-    int stay=0;
+    int stay;
     char opt;
 
     sqlite3_stmt* stmt;
@@ -46,12 +46,6 @@ public:
             cout << "\n\tUnable to open database";
             cout << "\n\tError:" << sqlite3_errmsg(db1);
         }
-        /*
-        else
-        {
-            cout << "\n\t database opened successfully";
-        }
-        */
     }
 
 
@@ -73,12 +67,6 @@ public:
             cout << "\n\tError:" << zErrMsg;
             sqlite3_free(zErrMsg);
         }
-        /*
-        else
-        {
-            cout << "\n\t Table created successfully";
-        }
-        */
     }
 
     void add_product(){
@@ -88,9 +76,11 @@ public:
         cout << "\n\n\t\t\t\t1. Product id:\t";
         cin >> id;
         cout << "\n\t\t\t\t2. Product Name:\t";
-        cin >> name;
+        cin.get();
+        getline(cin,name);
         cout << "\n\t\t\t\t3. Product Category:\t";
-        cin >> category;
+        cin.get();
+        getline(cin,category);
         cout << "\n\t\t\t\t4. Product Price(1 unit):\t";
         cin >> price;
         cout << "\n\t\t\t\t5. Total Quantity:\t";
@@ -134,6 +124,7 @@ public:
 
         system("cls");
         inv_display();
+        select();
         open_db();
 
         cout << "\n\n\t\t\t\tEnter product id:";
@@ -222,7 +213,14 @@ public:
 
         open_db();
 
-        sql = "SELECT * FROM STOCK";
+        do{
+            cout << "\n\t\t\t\t1. Display by id";
+            cout << "\n\t\t\t\t2. Display by name";
+            cout << "\n\t\t\t\t1. Display all";
+
+
+        }while(opt!=4)
+        sql = "SELECT * FROM STOCK ORDER BY NAME ASC";
         cout <<"\n";
         cout <<"\n\n\t\tID\t\tName\t\tCategory\tPrice\t\tQuantity";
 
