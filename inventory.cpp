@@ -321,11 +321,11 @@ void inventory()
         cout << "\n\t\t\t\t1. Add product";
         cout << "\n\t\t\t\t2. Update product";
         cout << "\n\t\t\t\t3. Delete product";
-        cout << "\n\t\t\t\t5. Available Stock";
-        cout << "\n\t\t\t\t6. Running-out of stock";
-        cout << "\n\t\t\t\t7. Out-of-stock products";
-        cout << "\n\t\t\t\t8. Return to employee page";
-        cout << "\n\t\t\t\t9. Exit";
+        cout << "\n\t\t\t\t4. Available Stock";
+        cout << "\n\t\t\t\t5. Running-out of stock";
+        cout << "\n\t\t\t\t6. Out-of-stock products";
+        cout << "\n\t\t\t\t7. Return to employee page";
+        cout << "\n\t\t\t\t8. Exit";
         cout << "\n\n\t\t\t\tYour Choice:";
         cin >> choice;
         switch (choice)
