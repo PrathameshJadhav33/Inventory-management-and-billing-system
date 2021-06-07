@@ -206,60 +206,6 @@ public:
 
     }
 
-    void search(){
-        open_db();
-        do{
-            system("cls");
-            inv_display();
-            cout << "\n\t\t\t\t1.Search By id";
-            cout << "\n\t\t\t\t2.Search By Name";
-            cout << "\n\t\t\t\t3.Exit";
-            cout << "\n\t\t\t\tYour choice:";
-            cin >> stay;
-            switch(stay){
-            case 1:
-                sql = "SELECT * FROM STOCK where ID = ?";
-                cout <<"\n";
-                cout <<"\n\n\t\tID\t\tName\t\tCategory\tPrice\t\tQuantity";
-
-                rc = sqlite3_exec(db1, sql, callback, (void *)data, &zErrMsg);
-                    if (rc != SQLITE_OK)
-                    {
-                        cout << "\n\t\t\t\tunable to FETCH RECORD";
-                        cout << "\n\t\t\t\tError:" << zErrMsg;
-                        sqlite3_free(zErrMsg);
-                    }
-                break;
-            case 2:
-                sql = "SELECT * FROM STOCK ORDER BY NAME ASC";
-                cout <<"\n";
-                cout <<"\n\n\t\tID\t\tName\t\tCategory\tPrice\t\tQuantity";
-
-                rc = sqlite3_exec(db1, sql, callback, (void *)data, &zErrMsg);
-                    if (rc != SQLITE_OK)
-                    {
-                        cout << "\n\t\t\t\tunable to FETCH RECORD";
-                        cout << "\n\t\t\t\tError:" << zErrMsg;
-                        sqlite3_free(zErrMsg);
-                    }
-                break;
-            case 3:
-                sql = "SELECT * FROM STOCK ORDER BY NAME ASC";
-                cout <<"\n";
-                cout <<"\n\n\t\tID\t\tName\t\tCategory\tPrice\t\tQuantity";
-
-                rc = sqlite3_exec(db1, sql, callback, (void *)data, &zErrMsg);
-                    if (rc != SQLITE_OK)
-                    {
-                        cout << "\n\t\t\t\tunable to FETCH RECORD";
-                        cout << "\n\t\t\t\tError:" << zErrMsg;
-                        sqlite3_free(zErrMsg);
-                    }
-                break;
-            }
-        }while(stay!=3)
-        sqlite3_close(db1);
-    }
      void select()
     {
         system("cls");
@@ -375,7 +321,6 @@ void inventory()
         cout << "\n\t\t\t\t1. Add product";
         cout << "\n\t\t\t\t2. Update product";
         cout << "\n\t\t\t\t3. Delete product";
-        cout << "\n\t\t\t\t4. Search product"
         cout << "\n\t\t\t\t5. Available Stock";
         cout << "\n\t\t\t\t6. Running-out of stock";
         cout << "\n\t\t\t\t7. Out-of-stock products";
@@ -395,22 +340,20 @@ void inventory()
             obj.del_product();
             break;
         case 4:
-            break;
-        case 5:
             obj.select();
             break;
-        case 6:
+        case 5:
             obj.ruuning_out_of_stock();
             break;
-        case 7:
+        case 6:
             obj.out_of_stock();
             break;
-        case 8:
+        case 7:
             break;
-        case 9:
+        case 8:
             exit(0);
         default:
             cout << "wrong choice!!";
         }
-    } while (choice != 8);
+    } while (choice != 7);
 }
