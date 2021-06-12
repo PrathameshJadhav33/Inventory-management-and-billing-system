@@ -43,4 +43,5 @@ int main()
             cout << "wrong choice!!";
         }
     } while (choice != 3);
+cout<<endl;
 }
